@@ -86,3 +86,17 @@ app/Http/Livewire/<php class>
 welcome.blade.php
     <livewire:comments />
 ```
+
+###showing validations like
+```
+app/Http/Livewire/<php class>
+    public function addComment()
+        {
+           $this->validate([
+               'name' => 'required'
+           ]);
+        }
+comments.blade.php
+   <input type="text" wire:model="name">
+   @error('name') <span class="error">{{ $message }}</span> @enderror
+```

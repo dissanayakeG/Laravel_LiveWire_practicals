@@ -20,14 +20,16 @@ class Comments extends Component
 
     public function addComment()
     {
-        if ($this->newComment == '') {
-            return;
-        }
-        array_unshift($this->comments, [
-            'creator' => 'Mds walker',
+       $this->validate([
+           'newComment' => 'required | max:20'
+       ]);
+
+        $comment = Comment::create([
+            'body'=> $this->newComment,
             'created_at' => Carbon::now()->diffForHumans(),
-            'body' => $this->newComment
+            'user_id' => 1,
         ]);
+        $this->comments->prepend($comment);
         $this->newComment = "";
     }
 
