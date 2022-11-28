@@ -100,3 +100,13 @@ comments.blade.php
    <input type="text" wire:model="name">
    @error('name') <span class="error">{{ $message }}</span> @enderror
 ```
+
+###passing data to components like
+```
+app/Http/Livewire/<php class>
+    public function deleteComment($commentId){
+       dd('delete '.$commentId);
+    }
+comments.blade.php
+     <div class="text-danger delete-btn" wire:click="deleteComment({{$comment->id}})">X</div>
+```
