@@ -15,6 +15,7 @@ class Counter extends Component
 
     public function increment(){
         $this->counter = $this->counter+1;
+        $this->emit('counterUp', $this->counter);
     }
 
     public function decrement(){
