@@ -21,5 +21,13 @@
 {{--@livewire('comments')--}}
 {{--@livewireScripts--}}
 {{--<livewire:scripts/>--}}
+
+
+<script>
+    Livewire.on('counterUp', counter => {
+        console.log('counter is : ' + counter);
+    })
+</script>
 </body>
+
 </html>
