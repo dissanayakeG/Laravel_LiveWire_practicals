@@ -20,12 +20,22 @@ class Comments extends Component
 //        $this->comments = $commentsAsProp;
 //    }
 
+    protected function rules()
+    {
+        return [
+            'newComment' => 'required|max:20',
+        ];
+    }
+
+    //realtime validations
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+
     public function addComment()
     {
-        $this->validate([
-            'newComment' => 'required | max:20'
-        ]);
-
+        $this->validate();
         $comment = Comment::create([
             'body' => $this->newComment,
             'created_at' => Carbon::now()->diffForHumans(),
