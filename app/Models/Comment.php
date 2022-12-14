@@ -11,7 +11,18 @@ class Comment extends Model
 
     protected $guarded = [];
 
-    public function creator(){
+    public function creator()
+    {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    function whereBody($body)
+    {
+        return $this->where('body', $body)->first();
+    }
+
+    public function setBodyAttribute($value)
+    {
+        $this->attributes['body'] = strtolower($value);
     }
 }
