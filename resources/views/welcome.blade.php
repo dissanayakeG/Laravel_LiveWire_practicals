@@ -24,6 +24,8 @@
         </div>
         <div class="dashboard">
             <div class="content-wrapper">
+                <x-collection-practical/>
+                <x-progress/>
                 <x-input.datepicker/>
 
                 <livewire:counter/>
