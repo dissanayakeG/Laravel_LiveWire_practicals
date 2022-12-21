@@ -8,6 +8,6 @@ class Collection extends Component
 {
     public function render()
     {
-        return view('livewire.collection')->layout('layout.app');
+        return view('livewire.collection')->layout('layouts.app');
     }
 }
