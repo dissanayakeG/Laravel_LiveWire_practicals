@@ -18,3 +18,5 @@ Route::get('/', function () {
 //    return view('welcome', compact('commentsFromWebPHP'));
     return view('welcome');
 });
+
+Route::get('/collection', \App\Http\Livewire\Collection::class);
