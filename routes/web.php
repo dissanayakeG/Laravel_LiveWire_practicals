@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Facades\PostCard;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,10 @@ Route::get('/', function () {
 });
 
 Route::get('/collection', \App\Http\Livewire\Collection::class);
+
+
+Route::get('/facades',  function () {
+    PostCard::hello('my message', 'mds@gmail.com');
+});
+
+

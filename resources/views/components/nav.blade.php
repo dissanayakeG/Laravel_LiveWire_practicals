@@ -15,11 +15,12 @@
                 >
             </a>
         </li>
+        <li class="item">
+            <a href="/facades">
+                <span class="text"
+                >{{ "FACADES" }}</span
+                >
+            </a>
+        </li>
     </ul>
 </div>
-
-<style>
-    .highlight {
-        color: aqua;
-    }
-</style>
