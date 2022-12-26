@@ -16,6 +16,13 @@
             </a>
         </li>
         <li class="item">
+            <a href="/events">
+                <span class="text"
+                >{{ "EVENTS" }}</span
+                >
+            </a>
+        </li>
+        <li class="item">
             <a href="/facades">
                 <span class="text"
                 >{{ "FACADES" }}</span

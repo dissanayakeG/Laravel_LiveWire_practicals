@@ -21,6 +21,7 @@ Route::get('/', function () {
 });
 
 Route::get('/collection', \App\Http\Livewire\Collection::class);
+Route::get('/events', \App\Http\Livewire\Events::class);
 
 
 Route::get('/facades',  function () {
