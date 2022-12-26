@@ -15,16 +15,12 @@
 </head>
 
 <body>
-<div class="wrapper">
-    <div class="content">
-        <div class="side-bar">
-            <x-nav/>
-        </div>
-        <div class="dashboard">
-            <div class="content-wrapper">
-                {{$slot}}
-            </div>
-        </div>
+<div class="content">
+    <div class="side-bar">
+        <x-nav/>
+    </div>
+    <div class="dashboard">
+        {{$slot}}
     </div>
 </div>
 

@@ -1,22 +1,13 @@
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    height: auto;
-}
 
-.header {
-    min-height: 10vh;
-    width: 100%;
-    position: relative;
-    background-color: rgb(44, 50, 59);
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .content {
     display: flex;
     flex-direction: row;
-    min-height: 100vh;
-    width: 100%;
     background-color: rgb(223, 217, 218);
 }
 
@@ -25,13 +16,12 @@
 }
 
 .dashboard {
+    height: 935px;
     width: 80%;
-}
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+    margin: 20px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
 }
 
 .nav-list {
@@ -110,27 +100,4 @@
     .nav-list li a span {
         display: none;
     }
-}
-
-.router-link{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 12px;
-    margin: 10px;
-    color: black;
-    background-color: rgb(199, 196, 191);
-    width: 220px;
-    height: 40px;
-}
-.router-link:hover{
-    text-decoration: none;
-}
-
-.content-wrapper {
-    margin: 20px;
-    border-radius: 15px;
-    background-color: rgb(255, 255, 255);
-    padding: 20px;
-    overflow: scroll;
 }
