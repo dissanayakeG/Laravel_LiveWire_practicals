@@ -35,7 +35,7 @@
         console.log('counter is : ' + counter);
         swal({
             title: 'Are you sure?',
-            text: 'some text here....',
+            text: 'counter is : ' + counter,
             icon: 'warning',
         });
     })
