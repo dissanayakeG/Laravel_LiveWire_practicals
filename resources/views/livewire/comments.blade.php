@@ -31,6 +31,7 @@
 <style>
     .data-wrapper {
         height: auto;
+        width: 345px;
         margin-bottom: 20px;
         border: 1px solid gray;
         border-radius: 10px;
