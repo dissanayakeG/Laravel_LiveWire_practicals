@@ -22,16 +22,6 @@ class ExampleTest extends TestCase
         $this->assertTrue(true);
     }
 
-    /** @test */
-    function can_create_post()
-    {
-        Livewire::test(Comments::class)
-            ->set('newComment','aaa')
-            ->call('addComment');
-
-        $this->assertTrue(Comment::where(['body'=>'aaa'])->exists());
-    }
-
     public function testSimpleMock()
     {
         $mock = \Mockery::mock(array('pi' => 3.1416, 'e' => 2.71));
