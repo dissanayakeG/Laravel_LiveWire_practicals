@@ -28,4 +28,5 @@ Route::get('/facades',  function () {
     PostCard::hello('my message', 'mds@gmail.com');
 });
 
-
+Route::post('/books', [\App\Http\Controllers\BookController::class, 'store' ]);
+Route::patch('/books/{book}', [\App\Http\Controllers\BookController::class, 'update' ]);
