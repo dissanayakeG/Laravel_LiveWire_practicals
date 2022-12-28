@@ -51,6 +51,7 @@ class BookReservationTest extends TestCase
         ]);
         $book = Book::first();
 
+
         $this->patch('/books/' . $book->id, [
             'title' => 'Some title',
             'author' => 'Some author',

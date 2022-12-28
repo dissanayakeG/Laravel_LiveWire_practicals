@@ -30,4 +30,4 @@ Route::get('/facades',  function () {
 
 Route::post('/books', [\App\Http\Controllers\BookController::class, 'store' ]);
 Route::patch('/books/{book}', [\App\Http\Controllers\BookController::class, 'update' ]);
-Route::patch('/books/{book}', [\App\Http\Controllers\BookController::class, 'destroy' ]);
+Route::delete('/books/{book}', [\App\Http\Controllers\BookController::class, 'destroy' ]);
