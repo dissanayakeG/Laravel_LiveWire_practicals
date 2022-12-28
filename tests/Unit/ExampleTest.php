@@ -17,15 +17,15 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
-    {
-        $this->assertTrue(true);
-    }
-
-    public function testSimpleMock()
-    {
-        $mock = \Mockery::mock(array('pi' => 3.1416, 'e' => 2.71));
-        $this->assertEquals(3.1416, $mock->pi());
-        $this->assertEquals(2.71, $mock->e());
-    }
+//    public function test_example()
+//    {
+//        $this->assertTrue(true);
+//    }
+//
+//    public function testSimpleMock()
+//    {
+//        $mock = \Mockery::mock(array('pi' => 3.1416, 'e' => 2.71));
+//        $this->assertEquals(3.1416, $mock->pi());
+//        $this->assertEquals(2.71, $mock->e());
+//    }
 }

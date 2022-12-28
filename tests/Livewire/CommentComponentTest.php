@@ -11,7 +11,13 @@ use Tests\TestCase;
 class CommentComponentTest extends TestCase
 {
     /** @test */
-    function can_create_post()
+    function can_see_comment_component()
+    {
+        $this->get('/')->assertSeeLivewire('comments');
+    }
+
+    /** @test */
+    function can_create_comment()
     {
         Livewire::test(Comments::class)
             ->set('newComment','aaa')
@@ -21,7 +27,7 @@ class CommentComponentTest extends TestCase
     }
 
     /** @test */
-    function can_delete_post()
+    function can_delete_comment()
     {
         Livewire::test(Comments::class)
             ->set('newComment','aaa')

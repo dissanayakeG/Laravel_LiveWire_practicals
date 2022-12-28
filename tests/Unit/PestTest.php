@@ -1,6 +1,6 @@
 <?php
 
-test('asserts true is true', function () {
+test('asserts pest is working', function () {
     $this->assertTrue(true);
 
     expect(true)->toBeTrue();
