@@ -7,7 +7,6 @@ use App\Models\Comment;
 use App\Models\User;
 use Carbon\Carbon;
 use Livewire\Livewire;
-//use PHPUnit\Framework\TestCase;
 use Tests\TestCase;
 
 
@@ -24,20 +23,14 @@ class ExampleTest extends TestCase
     }
 
     /** @test */
-//    function can_create_post()
-//    {
-////        $this->actingAs(User::factory()->create());
-//        Livewire::test(Comments::class)
-//            ->set('newComment',[
-//                'body' => 'aaa',
-//                'created_at' => Carbon::now()->diffForHumans(),
-//                'user_id' => 1,
-//            ])
-//            ->call('addComment');
-//        dd(2);
-//
-//        $this->assertTrue(Comment::whereBody('aaa')->exists());
-//    }
+    function can_create_post()
+    {
+        Livewire::test(Comments::class)
+            ->set('newComment','aaa')
+            ->call('addComment');
+
+        $this->assertTrue(Comment::where(['body'=>'aaa'])->exists());
+    }
 
     public function testSimpleMock()
     {
