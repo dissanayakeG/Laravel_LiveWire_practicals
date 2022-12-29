@@ -41,7 +41,8 @@ class Comments extends Component
             'body' => $this->newComment,
             'created_at' => Carbon::now()->diffForHumans(),
 //            'user_id' => User::firstOrCreate(['email'=>'u1@gmail.com'],['name'=>'U1', 'password'=>bcrypt(123123)])]);
-            'user_id' => User::firstOrCreate(['email'=>'u1@gmail.com','name'=>'U1', 'password'=>bcrypt(123123)])->id]);
+//            'user_id' => User::firstOrCreate(['email'=>'u1@gmail.com','name'=>'U1', 'password'=>bcrypt(123123)])->id]);
+            'user_id' => 1]);
 //        $this->comments->prepend($comment);
         $this->newComment = "";
     }

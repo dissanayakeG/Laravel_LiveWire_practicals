@@ -1,3 +1,110 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/*@tailwind base;*/
+/*@tailwind components;*/
+/*@tailwind utilities;*/
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(223, 217, 218);
+}
+
+.side-bar {
+    width: 20%;
+}
+
+.dashboard {
+    height: 95vh;
+    width: 80%;
+    margin: 20px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(30, 36, 46);
+    max-height: 200vh;
+    min-height: 100vh;
+}
+
+.nav-list ul {
+    list-style: none;
+    width: 90%;
+
+    margin: 20px auto 20px 20px;
+}
+
+.nav-list li {
+    display: block;
+    width: 100%;
+    background-color: rgb(44, 50, 59);
+    height: 40px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-bottom: 2px;
+}
+
+.nav-list li:hover {
+    background-color: white;
+    width: 105%;
+}
+
+.nav-list li:hover a ion-icon {
+    color: rgb(66, 57, 57);
+}
+
+.nav-list li:hover a span {
+    color: rgb(66, 57, 57);
+}
+
+.nav-list li a {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 40px;
+    text-decoration: none;
+}
+
+.nav-list li a ion-icon {
+    position: relative;
+    left: 10px;
+    font-size: 25px;
+    color: white;
+}
+
+.nav-list li a span {
+    margin-left: 20px;
+    font-size: 12px;
+    color: white;
+}
+
+@media only screen and (max-width: 900px) {
+    .nav-list {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        width: 80px;
+    }
+
+    .nav-list ul {
+        list-style: none;
+        width: 80%;
+        margin: 20px auto 20px 10px;
+    }
+
+    .nav-list li a span {
+        display: none;
+    }
+}

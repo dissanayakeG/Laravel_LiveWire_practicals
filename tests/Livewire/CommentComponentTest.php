@@ -37,5 +37,6 @@ class CommentComponentTest extends TestCase
             ->call('deleteComment',1);
 
         $this->assertDatabaseMissing('comments',['id'=>1]);
+        $this->assertCount(0, Comment::all());
     }
 }
