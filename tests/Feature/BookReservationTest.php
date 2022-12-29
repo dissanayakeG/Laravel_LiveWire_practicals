@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Author;
 use App\Models\Book;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -17,7 +18,7 @@ class BookReservationTest extends TestCase
         $this->withoutExceptionHandling();
         $response = $this->post('/books', [
             'title' => 'New title',
-            'author' => 'Mds1',
+            'author_id' => 'Mds1',
         ]);
         $response->assertOk();
         $this->assertCount(1, Book::all());
@@ -37,9 +38,9 @@ class BookReservationTest extends TestCase
     {
         $response = $this->post('/books', [
             'title' => 'Some',
-            'author' => '',
+            'author_id' => '',
         ]);
-        $response->assertSessionHasErrors('author');
+        $response->assertSessionHasErrors('author_id');
     }
 
     /** @test */
@@ -47,16 +48,16 @@ class BookReservationTest extends TestCase
     {
         $this->post('/books', [
             'title' => 'New title',
-            'author' => 'Mds1',
+            'author_id' => 'Mds1',
         ]);
         $book = Book::first();
 
 
         $this->patch('/books/' . $book->id, [
             'title' => 'Some title',
-            'author' => 'Some author',
+            'author_id' => 'Some author',
         ]);
         $this->assertEquals('Some title', Book::first()->title);
-        $this->assertEquals('Some author', Book::first()->author);
+        $this->assertEquals('Mds1', Author::first()->name);
     }
 }

@@ -11,7 +11,7 @@ class BookController extends Controller
     {
         $data = request()->validate([
             'title'=>'required',
-            'author'=>'required'
+            'author_id'=>'required'
         ]);
         $data = Book::create($data);
         return response($data,200);
@@ -21,7 +21,7 @@ class BookController extends Controller
     {
         $data = request()->validate([
             'title'=>'required',
-            'author'=>'required'
+            'author_id'=>'required'
         ]);
         //route model binding $book string must similar to route parameter
         $data = $book->update($data);

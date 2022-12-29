@@ -1,0 +1,16 @@
+<?php
+namespace Tests\Unit;
+
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Models\Book;
+
+uses(RefreshDatabase::class);
+
+//it('can be recorded author id', function () {
+//    Book::create([
+//        'title' => 'Some',
+//        'author_id' => 1
+//    ]);
+//    $this->assertCount(1, Book::all());
+//});
