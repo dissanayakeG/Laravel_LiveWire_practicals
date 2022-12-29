@@ -33,12 +33,10 @@ class Book extends Model
             ->whereNotNull('checked_out_at')
             ->whereNull('checked_in_at')
             ->first();
-//
         if(is_null($reservation)){
             throw  new \Exception();
         }
-//
-//        dd(2121212,$reservation);
+
         if(!is_null($reservation)) {
             $reservation->update([
                 'checked_in_at' => now()
