@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Facades\PostCard;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\BookCheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,9 +31,18 @@ Route::get('/facades',  function () {
     PostCard::hello('my message', 'mds@gmail.com');
 });
 
-Route::post('/books', [\App\Http\Controllers\BookController::class, 'store' ]);
-Route::patch('/books/{book}', [\App\Http\Controllers\BookController::class, 'update' ]);
-Route::delete('/books/{book}', [\App\Http\Controllers\BookController::class, 'destroy' ]);
+Route::post('/books', [BookController::class, 'store' ]);
+Route::patch('/books/{book}', [BookController::class, 'update' ]);
+Route::delete('/books/{book}', [BookController::class, 'destroy']);
+
+Route::post('/checkout/{book}', [BookCheckoutController::class, 'checkout' ]);
+Route::post('/checkin/{book}', [BookCheckoutController::class, 'checkin' ]);
 
 
-Route::post('/author', [\App\Http\Controllers\AuthorController::class, 'create' ]);
+Route::post('/author', [AuthorController::class, 'create' ]);
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
