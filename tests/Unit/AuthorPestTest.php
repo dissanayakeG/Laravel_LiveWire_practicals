@@ -1,12 +1,11 @@
 <?php
-namespace Tests\Unit;
 
-//use Illuminate\Foundation\Testing\RefreshDatabase;
-//use App\Models\Author;
-//
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Models\Author;
+
 //uses(RefreshDatabase::class);
 //
-//it('only name is required to create an author', function () {
+//test('only name is required to create an author', function () {
 //    Author::firstOrCreate([
 //        'name' => 'Jone Doe'
 //    ]);

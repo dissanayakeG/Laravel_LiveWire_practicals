@@ -1,13 +1,10 @@
 <?php
-namespace Tests\Unit;
-
-
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Models\Book;
 
 uses(RefreshDatabase::class);
 
-//it('can be recorded author id', function () {
+//test('can be recorded author id', function () {
 //    Book::create([
 //        'title' => 'Some',
 //        'author_id' => 1
