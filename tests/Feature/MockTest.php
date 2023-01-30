@@ -21,6 +21,18 @@ it('can mock object', function () {
     app(MockTestController::class)->execute();
 });
 
+it('test execute', function () {
+    $mock = $this->mock(Context::class, function (MockInterface $mock) {
+        $mock->shouldReceive('perform')->once()->andReturn(5);
+    });
+
+    $testController = new MockTestController($mock);
+
+    $this->assertEquals(50, $testController->execute());
+
+});
+
+
 it('test start engine', function(){
         //Method 1
         
