@@ -16,7 +16,7 @@
 
             <div class="data-wrapper">
                 <div class="p-2">
-                    <h4>{{$comment->creator->name}}</h4>
+                    <h4>{{$comment->creator?->name}}</h4>
                     <h6>{{$comment->created_at->diffForHumans()}}</h6>
                     <h5>{{$comment->body}}</h5>
                 </div>

@@ -8,10 +8,13 @@ use Livewire\Component;
 class Collection extends Component
 {
     public $attributes;
+    public $ages = [];
 
     public function mount()
     {
         $this->attributes = ['name'=>'Mds'];
+
+        $this->ages = [1,2,3,4,5,6,7];
     }
 
     public function getFluentApiProperty()

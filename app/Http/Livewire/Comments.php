@@ -12,14 +12,14 @@ class Comments extends Component
 {
     use WithPagination;
 
-//    public $comments;
+    //    public $comments;
     public $newComment;
 
-//    public function mount(/*$commentsAsProp*/)
-//    {
-//        $commentsAsProp = Comment::all();
-//        $this->comments = $commentsAsProp;
-//    }
+    //    public function mount(/*$commentsAsProp*/)
+    //    {
+    //        $commentsAsProp = Comment::all();
+    //        $this->comments = $commentsAsProp;
+    //    }
 
     protected function rules()
     {
@@ -37,13 +37,17 @@ class Comments extends Component
     public function addComment()
     {
         $this->validate();
-        $comment = Comment::create([
-            'body' => $this->newComment,
-            'created_at' => Carbon::now()->diffForHumans(),
-//            'user_id' => User::firstOrCreate(['email'=>'u1@gmail.com'],['name'=>'U1', 'password'=>bcrypt(123123)])]);
-//            'user_id' => User::firstOrCreate(['email'=>'u1@gmail.com','name'=>'U1', 'password'=>bcrypt(123123)])->id]);
-            'user_id' => 1]);
-//        $this->comments->prepend($comment);
+        Comment::create(
+            [
+                'body' => $this->newComment,
+                'created_at' => Carbon::now()->diffForHumans(),
+                'user_id' => User::firstOrCreate(
+                    ['email' => 'u1@gmail.com'],
+                    ['name' => 'U1', 'password' => bcrypt('123123')]
+                )->id
+            ]
+        );
+        //$this->comments->prepend($comment);
         $this->newComment = "";
     }
 
@@ -51,7 +55,7 @@ class Comments extends Component
     {
         $comment = Comment::find($commentId);
         $comment->delete();
-//        $this->comments = $this->comments->except($commentId);
+        //$this->comments = $this->comments->except($commentId);
     }
 
     public function render()
