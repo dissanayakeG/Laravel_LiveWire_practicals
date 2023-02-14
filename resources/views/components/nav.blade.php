@@ -23,6 +23,13 @@
             </a>
         </li>
         <li class="item">
+            <a href="/blade-tests">
+                <span class="text"
+                >{{ "BLADES" }}</span
+                >
+            </a>
+        </li>
+        <li class="item">
             <a href="/facades">
                 <span class="text"
                 >{{ "FACADES" }}</span

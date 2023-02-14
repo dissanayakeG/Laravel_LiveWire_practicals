@@ -23,6 +23,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/blade-tests', function () {
+    return view('bladeTest');
+});
+
 Route::get('/collection', \App\Http\Livewire\Collection::class);
 Route::get('/events', \App\Http\Livewire\Events::class);
 

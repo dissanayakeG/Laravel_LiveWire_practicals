@@ -24,6 +24,11 @@ class Events extends Component
         //dd("Event Fired"); dd s not working, but actually event is fired
     }
 
+    public function openModal()
+    {
+        $this->dispatchBrowserEvent('showModal');
+    }
+
     public function render()
     {
         return view('livewire.events');
