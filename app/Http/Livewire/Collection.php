@@ -9,12 +9,14 @@ class Collection extends Component
 {
     public $attributes;
     public $ages = [];
+    public $technologies = [];
 
     public function mount()
     {
         $this->attributes = ['name'=>'Mds'];
 
         $this->ages = [1,2,3,4,5,6,7];
+        $this->technologies = ["VueJs","ReactJs","AngularJs","NodeJs","ExpressJs"];
     }
 
     public function getFluentApiProperty()

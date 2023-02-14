@@ -9,9 +9,9 @@
             </a>
         </li>
         <li class="item">
-            <a href="/collection">
+            <a href="/livewire">
                 <span class="text"
-                >{{ "COLLECTIONS" }}</span
+                >{{ "LIVEWIRE" }}</span
                 >
             </a>
         </li>
