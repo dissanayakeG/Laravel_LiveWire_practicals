@@ -1,7 +1,7 @@
 <div style="text-align:center; margin-top: 20px">
-    <button wire:click.prevent="increment">+(counterUp event will be called in Events.php)</button>
-    <h1>{{$counter}}</h1>
-    <button wire:click="decrement">- CounterDown</button>
+    <button wire:click.prevent="increment" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">+(counterUp event will be called in Events.php)</button>
+    <h1 class="text-red-600">{{$counter}}</h1>
+    <button wire:click="decrement" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">- CounterDown</button>
 
 
     <div x-data="{ open: false }" style="margin-top: 10px">
