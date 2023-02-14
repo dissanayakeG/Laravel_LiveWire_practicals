@@ -7,5 +7,5 @@
         Open Modal
     </button>
 
-    <x-modal />
+    <x-middle-modal :name="$modalData['name']" :modal-data="$modalData" />
 </div>
