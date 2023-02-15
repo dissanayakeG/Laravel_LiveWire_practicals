@@ -1,10 +1,8 @@
 <!-- modal.blade.php -->
-<x-modal name="'{{ $attributes['name'] }}'">
-
+<x-modal>
     <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-sm" @click.stop>
 
-        <pre>{{ $attributes['name'] }} </pre>
-
+        {{-- =====<pre>{{ $attributes['name'] }}  <?php print_r($this->modalData); ?></pre>===== --}}
 
         <div class="text-lg font-medium mb-4">Modal Title</div>
         <p class="text-gray-600">Modal content goes here.</p>
@@ -14,5 +12,4 @@
             </button>
         </div>
     </div>
-
 </x-modal>
