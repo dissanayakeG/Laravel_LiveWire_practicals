@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use Illuminate\Support\Fluent;
 use Livewire\Component;
 
 class Collection extends Component
 {
-    public $attributes;
+    public $formData;
     public $ages = [];
     public $technologies = [];
 
     public function mount()
     {
-        $this->attributes = ['name'=>'Mds'];
+        $this->formData = ['name'=>'Mds'];
 
         $this->ages = [1,2,3,4,5,6,7];
         $this->technologies = ["VueJs","ReactJs","AngularJs","NodeJs","ExpressJs"];
@@ -21,7 +21,7 @@ class Collection extends Component
 
     public function getFluentApiProperty()
     {
-        $data = new Fluent($this->attributes);
+        $data = new Fluent($this->formData);
         $data['last_name'] = 'smith';
 
         $data->lastName('congo')

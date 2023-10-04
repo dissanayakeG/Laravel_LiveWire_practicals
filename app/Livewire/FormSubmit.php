@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use Livewire\Component;
 
@@ -42,6 +42,6 @@ class FormSubmit extends Component
 
     public function render()
     {
-        return view('livewire.form-submit');
+        return view('livewire.form-submit')->layout('layouts.app');
     }
 }
