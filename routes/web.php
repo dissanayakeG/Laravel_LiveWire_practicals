@@ -29,6 +29,7 @@ Route::get('/blade-tests', function () {
 
 Route::get('/livewire', \App\Http\Livewire\Collection::class);
 Route::get('/events', \App\Http\Livewire\Events::class);
+Route::get('/form', \App\Http\Livewire\FormSubmit::class);
 
 
 Route::get('/facades',  function () {

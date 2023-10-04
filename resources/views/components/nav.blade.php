@@ -16,6 +16,13 @@
             </a>
         </li>
         <li class="item">
+            <a href="/form">
+                <span class="text"
+                >{{ "FORM SUBMISSION" }}</span
+                >
+            </a>
+        </li>
+        <li class="item">
             <a href="/events">
                 <span class="text"
                 >{{ "EVENTS" }}</span
