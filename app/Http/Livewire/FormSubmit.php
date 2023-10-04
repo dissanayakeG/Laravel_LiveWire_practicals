@@ -11,7 +11,7 @@ class FormSubmit extends Component
     public $data = [];
     public $options;
     public $selectedOption;
-
+    public $users;
 
     public function mount()
     {
@@ -29,6 +29,8 @@ class FormSubmit extends Component
     {
         if($this->title){
             $this->data = [1,2,3,4,5,6,7,8,9,10];
+            $this->users = json_decode(file_get_contents(base_path('data.json')), true);
+
         }else{
             $this->data = [];
         }
