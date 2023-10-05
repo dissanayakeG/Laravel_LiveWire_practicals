@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+
 class Events extends Component
 {
     public $modalData =  [
@@ -15,7 +16,7 @@ class Events extends Component
             'id' => 1, 'name' => 'New name',
         ];
 
-        $this->dispatchBrowserEvent('showModal', $this->modalData);
+        $this->dispatch('showModal', $this->modalData);
     }
 
     public function render()

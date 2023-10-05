@@ -6,14 +6,9 @@ use App\Models\Comment;
 use App\Models\User;
 use Carbon\Carbon;
 use Livewire\Component;
-use Livewire\WithPagination;
-use Livewire\Attributes\Computed;
-
 
 class Comments extends Component
 {
-    use WithPagination;
-
     public $comments;
     public $newComment = '';
 

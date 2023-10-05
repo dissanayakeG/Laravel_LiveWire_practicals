@@ -4,6 +4,7 @@
             {{--        <input type="text" class="form-control" id="comment" wire:model.debounce.1000ms="newComment"> --}}
             <input class="h-10 px-3 rounded-full border-gray-300 text-sm focus:outline-none" type="text" id="comment"
                 placeholder="Enter some comment" wire:model.debounce.lazy="newComment">
+
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
                 wire:click.prevent="addComment">Submit</button>
         </div>
