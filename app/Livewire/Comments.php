@@ -25,15 +25,12 @@ class Comments extends Component
 
     public function mount()
     {
-        $this->comments = Comment::all();
+        $this->fetchComments();
     }
 
-    #[Computed]
-    public function comments()
+    public function fetchComments()
     {
         $this->comments = Comment::all();
-
-        return $this->comments;
     }
 
     protected function rules()
@@ -52,7 +49,7 @@ class Comments extends Component
     public function addComment()
     {
         $this->validate();
-        $comment = Comment::create(
+        Comment::create(
             [
                 'body' => $this->newComment,
                 'created_at' => Carbon::now()->diffForHumans(),
@@ -62,15 +59,14 @@ class Comments extends Component
                 )->id
             ]
         );
-        $this->comments->prepend($comment);
         $this->newComment = '';
+        $this->fetchComments();
     }
 
-    public function deleteComment($commentId)
+    public function deleteComment(Comment $comment)
     {
-        $comment = Comment::find($commentId);
         $comment->delete();
-        $this->comments = Comment::all();
+        $this->fetchComments();
     }
 
     public function render()

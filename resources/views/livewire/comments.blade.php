@@ -22,7 +22,7 @@
                     <h6>{{ $comment->created_at->diffForHumans() }}</h6>
                     <h5>{{ $comment->body }}</h5>
                 </div>
-                <div class="text-red-600 delete-btn" wire:click="deleteComment({{ $comment->id }})">X</div>
+                <button class="text-red-600 delete-btn" wire:click="deleteComment({{ $comment->id }})">X</button>
             </div>
         @endforeach
     </div>
