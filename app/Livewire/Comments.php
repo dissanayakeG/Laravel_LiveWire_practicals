@@ -54,7 +54,9 @@ class Comments extends Component
                 )->id
             ]
         );
-        $this->newComment = '';
+        // $this->newComment = '';
+        $this->reset('newComment'); 
+
         $this->fetchComments();
     }
 
