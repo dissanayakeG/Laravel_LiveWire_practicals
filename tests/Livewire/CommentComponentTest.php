@@ -2,7 +2,7 @@
 
 namespace Tests\Livewire;
 
-use App\Http\Livewire\Comments;
+use App\Livewire\Comments;
 use App\Models\Comment;
 use Livewire\Livewire;
 use Tests\TestCase;
