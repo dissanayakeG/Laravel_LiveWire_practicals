@@ -42,6 +42,6 @@ class FormSubmit extends Component
 
     public function render()
     {
-        return view('livewire.form-submit')->layout('components.layouts.app');
+        return view('livewire.form-submit');
     }
 }
