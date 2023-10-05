@@ -27,9 +27,9 @@ Route::get('/blade-tests', function () {
     return view('bladeTest');
 });
 
-Route::get('/livewire', \App\Http\Livewire\Collection::class);
-Route::get('/events', \App\Http\Livewire\Events::class);
-Route::get('/form', \App\Http\Livewire\FormSubmit::class);
+Route::get('/livewire', \App\Livewire\Collection::class);
+Route::get('/events', \App\Livewire\Events::class);
+Route::get('/form', \App\Livewire\FormSubmit::class);
 
 
 Route::get('/facades',  function () {

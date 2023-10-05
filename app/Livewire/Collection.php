@@ -14,10 +14,10 @@ class Collection extends Component
     public function mount()
     {
         $this->formData = ['name'=>'Mds'];
-
         $this->ages = [1,2,3,4,5,6,7];
         $this->technologies = ["VueJs","ReactJs","AngularJs","NodeJs","ExpressJs"];
     }
+
 
     public function getFluentApiProperty()
     {
@@ -38,6 +38,6 @@ class Collection extends Component
 
     public function render()
     {
-        return view('livewire.collection')->layout('layouts.app');
+        return view('livewire.collection')->layout('components.layouts.app');
     }
 }

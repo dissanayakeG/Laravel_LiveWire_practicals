@@ -20,6 +20,6 @@ class Events extends Component
 
     public function render()
     {
-        return view('livewire.events')->layout('layouts.app');
+        return view('livewire.events')->layout('components.layouts.app');
     }
 }
