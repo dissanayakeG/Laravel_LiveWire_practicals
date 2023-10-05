@@ -7,4 +7,12 @@
     </button>
 
     <x-middle-modal />
+
+    </br>
+    </br>
+
+    <p>Below is extracted Alpine component</p>
+
+    <x-input-counter wire:model="quantity" />
+
 </div>

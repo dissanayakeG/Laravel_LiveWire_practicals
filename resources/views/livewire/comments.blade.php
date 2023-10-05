@@ -3,7 +3,7 @@
         <div class="flex items-center">
 
             <input class="h-10 px-3 rounded-full border-gray-300 text-sm focus:outline-none" type="text" id="comment"
-                placeholder="Enter some comment" wire:model.debounce.lazy="newComment">
+                wire:dirty.class="border-yellow" placeholder="Enter some comment" wire:model.debounce.lazy="newComment">
 
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
                 type="submit">Submit</button>
@@ -32,6 +32,10 @@
     </div>
 
     <style>
+        .border-yellow {
+            border-color: rgb(39, 243, 12) !important;
+        }
+
         .data-wrapper {
             height: auto;
             width: 345px;

@@ -6,6 +6,7 @@ use Livewire\Component;
 
 class Events extends Component
 {
+    public $quantity=0;
     public $modalData =  [
         'id' => 1, 'name' => 'modal-1'
     ];
