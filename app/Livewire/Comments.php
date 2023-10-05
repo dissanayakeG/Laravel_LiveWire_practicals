@@ -28,14 +28,11 @@ class Comments extends Component
         $this->comments = Comment::all();
     }
 
-    // public function getCommentsProperty()
-    // {
-    //     return $this->comments;
-    // }
-
     #[Computed]
     public function comments()
     {
+        $this->comments = Comment::all();
+
         return $this->comments;
     }
 
