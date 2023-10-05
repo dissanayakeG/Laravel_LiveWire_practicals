@@ -7,19 +7,37 @@ use App\Models\User;
 use Carbon\Carbon;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Livewire\Attributes\Computed;
+
 
 class Comments extends Component
 {
     use WithPagination;
 
-    //    public $comments;
-    public $newComment;
+    public $comments;
+    public $newComment = '';
 
     //    public function mount(/*$commentsAsProp*/)
     //    {
     //        $commentsAsProp = Comment::all();
     //        $this->comments = $commentsAsProp;
     //    }
+
+    public function mount()
+    {
+        $this->comments = Comment::all();
+    }
+
+    // public function getCommentsProperty()
+    // {
+    //     return $this->comments;
+    // }
+
+    #[Computed]
+    public function comments()
+    {
+        return $this->comments;
+    }
 
     protected function rules()
     {
@@ -37,7 +55,7 @@ class Comments extends Component
     public function addComment()
     {
         $this->validate();
-        Comment::create(
+        $comment = Comment::create(
             [
                 'body' => $this->newComment,
                 'created_at' => Carbon::now()->diffForHumans(),
@@ -47,19 +65,19 @@ class Comments extends Component
                 )->id
             ]
         );
-        //$this->comments->prepend($comment);
-        $this->newComment = "";
+        $this->comments->prepend($comment);
+        $this->newComment = '';
     }
 
     public function deleteComment($commentId)
     {
         $comment = Comment::find($commentId);
         $comment->delete();
-        //$this->comments = $this->comments->except($commentId);
+        $this->comments = Comment::all();
     }
 
     public function render()
     {
-        return view('livewire.comments', ['comments' => Comment::latest()->paginate(15)]);
+        return view('livewire.comments');
     }
 }

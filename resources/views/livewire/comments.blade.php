@@ -15,7 +15,7 @@
     </div>
 
     <div class="container" style="margin-top: 20px">
-        @foreach ($comments as $comment)
+        @foreach ($this->comments as $comment)
             <div class="data-wrapper">
                 <div class="p-2">
                     <h4>{{ $comment->creator?->name }}</h4>
@@ -25,7 +25,6 @@
                 <div class="text-red-600 delete-btn" wire:click="deleteComment({{ $comment->id }})">X</div>
             </div>
         @endforeach
-        {{ $comments->links() }}
     </div>
 
     <style>
