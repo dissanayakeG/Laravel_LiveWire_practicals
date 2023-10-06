@@ -5,11 +5,10 @@ namespace App\Livewire;
 use Livewire\Component;
 use Livewire\Attributes\Modelable;
 
-
 class TodoInput extends Component
 {
     #[Modelable] 
-    public $valuex = '';
+    public $value = '';
  
     public function render()
     {

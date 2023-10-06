@@ -18,18 +18,35 @@
         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Save</button>
     </form>
 
-    {{-- <div>
+    <div>
+        <p class="mb-2 mt-4 text-green-600">Using Json as an API</p>
+
         <ul>
-            @foreach ($users as $user)
+            @foreach ($this->users as $user)
                 <li>{{ $user['name'] }} - {{ $user['email'] }}</li>
             @endforeach
         </ul>
-    </div> --}}
+    </div>
 
     @if ($this->formData)
         @foreach ($this->formData as $item)
             {{ $item }}
         @endforeach
     @endif
-    
+
+
+    <form wire:submit.prevent="modelable">
+        <p class="mb-2 mt-4 text-green-600">Modelable</p>
+
+        <livewire:todo-input wire:model="todo" /> {{ $todo }}
+
+        <p class="mb-2 mt-4 text-green-600">Extract input into separate blade</p>
+
+        <x-input wire:model.live="todo" class="mt-4" />{{ $todo }}
+
+
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            type="submit">Save</button>
+    </form>
+
 </div>

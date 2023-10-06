@@ -10,7 +10,6 @@ class Collection extends Component
     public $formData;
     public $ages = [];
     public $technologies = [];
-    public $todo = 'initial ToDo';
     public $selected = [];
 
     public function mount()

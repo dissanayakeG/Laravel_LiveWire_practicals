@@ -1,7 +1,4 @@
 <div>
-    <p class="mb-4 text-green-600">Modelable</p>
-    <livewire:todo-input wire:model="todo" /> {{ $todo }}
-
     <p class="mb-4 text-green-600">Two way data binding</p>
     @foreach ($ages as $index => $age)
         <input wire:model.live="ages.{{ $index }}" wire:key="{{ $index }}
