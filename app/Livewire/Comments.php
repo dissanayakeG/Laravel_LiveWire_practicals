@@ -56,8 +56,13 @@ class Comments extends Component
 
     public function deleteComment(Comment $comment)
     {
-        $comment->delete();
-        $this->fetchComments();
+        if ($comment->user_id === auth()->id()) {
+            $comment->delete();
+            $this->fetchComments();
+            session()->flash('message', 'Comment deleted successfully.');
+        }else {
+            session()->flash('message', 'You do not have permission to delete this comment.');
+        }
     }
 
     public function render()

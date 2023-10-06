@@ -1,4 +1,9 @@
 <div class="container">
+    @if (session()->has('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
     <form class="flex items-center" wire:submit.prevent="addComment">
         <div class="flex items-center">
 
