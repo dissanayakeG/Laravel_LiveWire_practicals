@@ -1,27 +1,19 @@
 <div>
+    <p class="mb-4 text-green-600">Modelable</p>
     <livewire:todo-input wire:model="todo" /> {{ $todo }}
 
-
-    <p class="mb-4 text-green-600">Access $this->fluentApi computed property...</p>
-
-    <div class="break-after-all mb-4">{{ $this->fluentApi }}</div>
-
+    <p class="mb-4 text-green-600">Two way data binding</p>
     @foreach ($ages as $index => $age)
         <input wire:model.live="ages.{{ $index }}" wire:key="{{ $index }}
             class="h-10 px-3
             rounded-full border-gray-300 text-sm focus:outline-none mb-4" type="text">
     @endforeach
+    @php dump($ages); @endphp
 
-    <p class="mb-4 text-green-600">Two way data binding...</p>
-
-    <pre><?php print_r($ages); ?></pre>
-
-
-    <h3 class="mb-4 font-semibold text-gray-900 dark:text-white">CheckBoxes</h3>
+    <p class="mb-4 text-green-600">CheckBoxes data binding</p>
     <ul
         class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
         @foreach ($technologies as $technoloy)
-        
             <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                 <div class="flex items-center pl-3">
 
@@ -38,7 +30,10 @@
             </li>
         @endforeach
     </ul>
+    @php dump($selected); @endphp
 
-    <pre><?php print_r($selected); ?></pre>
+
+    <p class="mb-4 text-green-600">Access $this->fluentApi computed property</p>
+    <div class="break-after-all mb-4">{{ $this->fluentApi }}</div>
 
 </div>
