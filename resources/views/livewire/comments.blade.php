@@ -23,9 +23,9 @@
         @enderror
     </div>
 
-    <div class="container" style="margin-top: 20px">
+    <div class="container comments mt-4">
         @foreach ($this->comments as $comment)
-            <div class="data-wrapper" wire:key="'delete-button-'.{{ $comment->id }}">
+            <div class="data-wrapper bg-white p-6 rounded-lg shadow-md" wire:key="'delete-button-'.{{ $comment->id }}">
                 <div class="p-2">
                     <h4>{{ $comment->creator?->name }}</h4>
                     <h6>{{ $comment->created_at->diffForHumans() }}</h6>
@@ -37,6 +37,11 @@
     </div>
 
     <style>
+        .comments {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
         .border-yellow {
             border-color: rgb(39, 243, 12) !important;
         }
@@ -45,6 +50,7 @@
             height: auto;
             width: 345px;
             margin-bottom: 20px;
+            margin-right: 20px;
             border: 1px solid gray;
             border-radius: 10px;
             padding: 5px;
