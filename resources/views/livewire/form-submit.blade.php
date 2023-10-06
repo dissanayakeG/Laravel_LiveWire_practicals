@@ -31,4 +31,5 @@
             {{ $item }}
         @endforeach
     @endif
+    
 </div>

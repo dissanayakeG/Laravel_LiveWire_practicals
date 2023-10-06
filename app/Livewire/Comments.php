@@ -3,7 +3,6 @@
 namespace App\Livewire;
 
 use App\Models\Comment;
-use App\Models\User;
 use Carbon\Carbon;
 use Livewire\Component;
 
@@ -48,15 +47,10 @@ class Comments extends Component
             [
                 'body' => $this->newComment,
                 'created_at' => Carbon::now()->diffForHumans(),
-                'user_id' => User::firstOrCreate(
-                    ['email' => 'u1@gmail.com'],
-                    ['name' => 'U1', 'password' => bcrypt('123123')]
-                )->id
+                'user_id' => auth()->user()->id,
             ]
         );
-        // $this->newComment = '';
-        $this->reset('newComment'); 
-
+        $this->reset('newComment');
         $this->fetchComments();
     }
 

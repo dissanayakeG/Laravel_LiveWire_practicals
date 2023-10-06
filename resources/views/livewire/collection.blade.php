@@ -1,4 +1,7 @@
 <div>
+    <livewire:todo-input wire:model="todo" /> {{$todo}}
+
+
     <p class="mb-4 text-green-600">Access $this->fluentApi computed property...</p>
 
     <div class="break-after-all mb-4">{{ $this->fluentApi }}</div>
