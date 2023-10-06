@@ -11,14 +11,14 @@ class Collection extends Component
     public $ages = [];
     public $technologies = [];
     public $todo = 'initial ToDo';
+    public $selected = [];
 
     public function mount()
     {
-        $this->formData = ['name'=>'Mds'];
-        $this->ages = [1,2,3,4,5,6,7];
-        $this->technologies = ["VueJs","ReactJs","AngularJs","NodeJs","ExpressJs"];
+        $this->formData = ['name' => 'Mds'];
+        $this->ages = [1, 2, 3, 4, 5, 6, 7];
+        $this->technologies = ["VueJs", "ReactJs", "AngularJs", "NodeJs", "ExpressJs"];
     }
-
 
     public function getFluentApiProperty()
     {
@@ -30,7 +30,7 @@ class Collection extends Component
             ->isAdmin()
             ->isModerator(false);
 
-//        return $data->name;
+        //return $data->name;
         return $data->toJson();
         return $data->toArray()['name'];
         return $data->getAttributes()['name'];
