@@ -6,9 +6,19 @@ namespace Tests\Feature;
 
 use App\Models\Author;
 use App\Models\Book;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 uses(RefreshDatabase::class);
+
+beforeEach(function () {
+    $this->user = User::factory()->create([
+        'email' => 'test@example.com',
+        'password' => bcrypt('password123'),
+    ]);
+
+    $this->actingAs($this->user);
+});
 
 it('can be added new book', function () {
     $this->withoutExceptionHandling();

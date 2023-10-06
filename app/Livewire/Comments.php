@@ -60,7 +60,7 @@ class Comments extends Component
             $comment->delete();
             $this->fetchComments();
             session()->flash('message', 'Comment deleted successfully.');
-        }else {
+        } else {
             session()->flash('message', 'You do not have permission to delete this comment.');
         }
     }
