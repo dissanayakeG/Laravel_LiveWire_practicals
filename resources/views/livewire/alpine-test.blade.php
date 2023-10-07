@@ -47,8 +47,8 @@
                         completed: false
                     });
                     this.newTodo = "";
-                    $wire.abc()
-                    $wire.set("val", 5)
+                    this.$wire.abc()
+                    this.$wire.set("val", 5)
                 }
             },
             deleteToDo(index) {
