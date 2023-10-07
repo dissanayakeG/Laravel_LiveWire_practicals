@@ -49,7 +49,7 @@
                     this.newTodo = "";
                     this.$wire.abc()
                     this.$wire.set("val", 5)
-                }
+                };
             },
             deleteToDo(index) {
                 this.todos.splice(index, 1);
@@ -64,7 +64,7 @@
                 return this.todos.length - 1 === index;
             },
             initialize() {
-                alert(1);
+                console.log(this.$wire.val);
                 if (this.todos.length === 0) {
                     this.todos.push({
                         todo: "Task 1",

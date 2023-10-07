@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class AlpineTest extends Component
 {
-    public $val;
+    public $val =1;
     public function render()
     {
         return view('livewire.alpine-test');
