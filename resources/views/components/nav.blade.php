@@ -42,6 +42,11 @@
                     <span class="text">{{ 'FACADES' }}</span>
                 </a>
             </li>
+            <li class="item">
+                <a href="/alpine" wire:navigate>
+                    <span class="text">{{ 'ALPINE' }}</span>
+                </a>
+            </li>
         @else
             <li class="item">
                 <a href="/register" wire:navigate>
