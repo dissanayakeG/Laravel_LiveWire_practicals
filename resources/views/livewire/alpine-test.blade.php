@@ -1,39 +1,4 @@
-<div x-data='{ 
-        newTodo: "",
-        todos: [],
-        addToDo() {
-            if (this.newTodo.trim() !== "") {
-                this.todos.push({
-                    todo: this.newTodo,
-                    completed: false
-                });
-                this.newTodo = "";
-            };
-            $wire.abc()
-            $wire.set("val", 5)
-        },
-        deleteToDo(index) {
-            this.todos.splice(index, 1);
-        },
-        get numberOfToDosCompleted() {
-            return this.todos.filter(todo => todo.completed).length;
-        },
-        get toDoCount() {
-            return this.todos.length;
-        },
-        isLastToDo(index) {
-            return this.todos.length - 1 === index;
-        },
-        init() {
-            if (this.todos.length === 0) {
-                this.todos.push({
-                    todo: "Task 1",
-                    completed: false
-                });
-            }
-        }
-    }'
-    x-init="init">
+<div x-data='toDoList()' x-init="initialize">
 
     <div class="max-w-2xl mx-auto px-12 py-8 rounded-lg shadow-lg bg-gray-200">
         <div class="flex flex-col items-center justify-center mb-8">
@@ -67,9 +32,10 @@
             <span x-text="numberOfToDosCompleted"></span> / <span x-text="toDoCount"></span> to dos completed
         </div>
     </div>
+
 </div>
 
-{{-- <script>
+<script>
     function toDoList() {
         return {
             newTodo: "",
@@ -94,7 +60,53 @@
             },
             isLastToDo(index) {
                 return this.todos.length - 1 === index;
+            },
+            initialize() {
+                alert(1);
+                if (this.todos.length === 0) {
+                    this.todos.push({
+                        todo: "Task 1",
+                        completed: false
+                    });
+                }
             }
         };
     }
-</script> --}}
+</script>
+
+{{-- <div x-data='{ 
+    newTodo: "",
+    todos: [],
+    addToDo() {
+        if (this.newTodo.trim() !== "") {
+            this.todos.push({
+                todo: this.newTodo,
+                completed: false
+            });
+            this.newTodo = "";
+        };
+        $wire.abc()
+        $wire.set("val", 5)
+    },
+    deleteToDo(index) {
+        this.todos.splice(index, 1);
+    },
+    get numberOfToDosCompleted() {
+        return this.todos.filter(todo => todo.completed).length;
+    },
+    get toDoCount() {
+        return this.todos.length;
+    },
+    isLastToDo(index) {
+        return this.todos.length - 1 === index;
+    },
+    initialize() {
+        if (this.todos.length === 0) {
+            this.todos.push({
+                todo: "Task 1",
+                completed: false
+            });
+        }
+    }
+}'
+    x-init="initialize"></div> --}}
