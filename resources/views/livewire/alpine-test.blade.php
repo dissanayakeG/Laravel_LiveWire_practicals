@@ -1,5 +1,4 @@
-<div
-    x-data='{ 
+<div x-data='{ 
         newTodo: "",
         todos: [],
         addToDo() {
@@ -60,8 +59,9 @@
                 </div>
             </template>
 
-            <button class="bg-red-600 text-red px-2 py-1 rounded hover:bg-red-700" x-on:click="$wire.increment()"> Call Livewire
-                        </button>
+            <button class="btn bg-red-600 text-red px-2 py-1 rounded hover:bg-red-700" x-on:click="$wire.increment()">
+                Call Livewire
+            </button>
         </div>
         <div>
             <span x-text="numberOfToDosCompleted"></span> / <span x-text="toDoCount"></span> to dos completed
