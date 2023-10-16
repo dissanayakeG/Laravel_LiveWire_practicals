@@ -1,14 +1,14 @@
-<div x-data='toDoList()' x-init="initialize">
+<div x-data='toDoList()' x-init="initialize()">
 
-    <div class="max-w-2xl mx-auto px-12 py-8 rounded-lg shadow-lg bg-gray-200">
+    <div class="max-w-2xl px-12 py-8 mx-auto bg-gray-200 rounded-lg shadow-lg">
         <div class="flex flex-col items-center justify-center mb-8">
-            <h1 class="text-3xl font-bold mb-8">To Do List</h1>
+            <h1 class="mb-8 text-3xl font-bold">To Do List</h1>
             <input type="text" x-model="newTodo" placeholder="I need to..."
-                class="mx-auto px-4 py-2 rounded shadow text-lg min-w-full" @keydown.enter="addToDo">
+                class="min-w-full px-4 py-2 mx-auto text-lg rounded shadow" @keydown.enter="addToDo">
         </div>
-        <div class="bg-white w-full rounded shadow mb-8">
+        <div class="w-full mb-8 bg-white rounded shadow">
             <template x-for="(todo, index) in todos" :key="index">
-                <div class="flex items-center py-4  ml-8" :class="{ 'border-b border-gray-400': !isLastToDo(index) }">
+                <div class="flex items-center py-4 ml-8" :class="{ 'border-b border-gray-400': !isLastToDo(index) }">
                     <div class="w-1/12 text-center">
                         <input type="checkbox" x-model="todo.completed">
                     </div>
@@ -16,7 +16,7 @@
                         <p x-text="todo.todo" :class="{ 'line-through': todo.completed }"></p>
                     </div>
                     <div class="w-1/12 text-center">
-                        <button class="bg-red-600 text-red px-2 py-1 rounded hover:bg-red-700"
+                        <button class="px-2 py-1 bg-red-600 rounded text-red hover:bg-red-700"
                             @click="deleteToDo(index)">
                             &cross;
                         </button>
@@ -24,7 +24,7 @@
                 </div>
             </template>
 
-            <button class="btn bg-red-600 text-red px-2 py-1 rounded hover:bg-red-700" x-on:click="$wire.increment()">
+            <button class="px-2 py-1 bg-red-600 rounded btn text-red hover:bg-red-700" x-on:click="$wire.increment()">
                 Call Livewire
             </button>
         </div>
