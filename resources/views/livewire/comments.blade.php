@@ -15,8 +15,13 @@
 
             <span wire:loading>Saving...</span>
 
+            <input class="h-10 px-3 rounded-full border-gray-300 text-sm focus:outline-none" type="text"
+                id="comment" wire:dirty.class="border-yellow" placeholder="Search for a comment..."
+                wire:model.live.debounce.500ms="search">
+
         </div>
     </form>
+
     <div class="container">
         @error('newComment')
             <span class="text-red-600">{{ $message }}</span>

@@ -10,6 +10,7 @@ class Comments extends Component
 {
     public $comments;
     public $newComment = '';
+    public $search = '';
 
     //    public function mount(/*$commentsAsProp*/)
     //    {
@@ -63,6 +64,15 @@ class Comments extends Component
         } else {
             session()->flash('message', 'You do not have permission to delete this comment.');
         }
+    }
+
+    public function updatedSearch(){
+        // $this->comments = $this->comments->filter(function($comment) {
+        //     return str_contains($comment->body, $this->search);
+        // });
+
+        $this->comments = Comment::where('body', 'like', '%' . $this->search . '%')->get();
+
     }
 
     public function render()
