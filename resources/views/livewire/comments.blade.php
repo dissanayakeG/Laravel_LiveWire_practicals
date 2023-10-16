@@ -7,18 +7,18 @@
     <form class="flex items-center" wire:submit.prevent="addComment">
         <div class="flex items-center">
 
-            <input class="h-10 px-3 rounded-full border-gray-300 text-sm focus:outline-none" type="text" id="comment"
-                wire:dirty.class="border-yellow" placeholder="Enter some comment" wire:model.debounce.lazy="newComment">
+            <x-input class="h-10 px-3 rounded-full border-gray-300 text-sm focus:outline-none" type="text"
+                id="comment" wire:dirty.class="border-yellow" placeholder="Enter some comment"
+                wire:model.debounce.lazy="newComment" />
 
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
                 type="submit">Submit</button>
 
             <span wire:loading>Saving...</span>
 
-            <input class="h-10 px-3 rounded-full border-gray-300 text-sm focus:outline-none" type="text"
+            <x-input  class="ml-4 h-10 px-3 rounded-full border-gray-300 text-sm focus:outline-none" type="text"
                 id="comment" wire:dirty.class="border-yellow" placeholder="Search for a comment..."
-                wire:model.live.debounce.500ms="search">
-
+                wire:model.live.debounce.500ms="search" />
         </div>
     </form>
 
