@@ -15,7 +15,7 @@ class DynamicInputs extends Component
             [
                 'id' => 1,
                 'name' => 'sam',
-                'address' => 'kandy',
+                'address' => 'new york',
                 'age' => 23
             ]
         ];
@@ -58,7 +58,7 @@ class DynamicInputs extends Component
     public function submit()
     {
         $validated = $this->validate();
-        dd($validated);
+        // dd($validated);
     }
 
     public function addRow()

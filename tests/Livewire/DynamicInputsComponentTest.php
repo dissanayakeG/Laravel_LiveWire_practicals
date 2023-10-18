@@ -2,7 +2,6 @@
 
 use App\Livewire\DynamicInputs;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use App\Models\Book;
 use Livewire\Livewire;
 
 uses(Tests\TestCase::class, RefreshDatabase::class);
