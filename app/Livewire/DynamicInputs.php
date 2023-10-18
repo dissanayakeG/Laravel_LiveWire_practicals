@@ -71,6 +71,13 @@ class DynamicInputs extends Component
         ]);
     }
 
+    public function deleteRow($index)
+    {
+        if (isset($this->formData[$index])) {
+            unset($this->formData[$index]);
+        }
+    }
+
 
     public function render()
     {
