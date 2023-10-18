@@ -49,4 +49,8 @@
             type="submit">Save</button>
     </form>
 
+    <div class="mt-6">
+        <p class="mb-4"> DYNAMIC-INPUTS</p>
+        <livewire:dynamic-inputs />
+    </div>
 </div>
