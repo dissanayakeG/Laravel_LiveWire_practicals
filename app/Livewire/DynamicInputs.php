@@ -57,7 +57,8 @@ class DynamicInputs extends Component
 
     public function submit()
     {
-        $this->validate();
+        $validated = $this->validate();
+        dd($validated);
     }
 
     public function addRow()
