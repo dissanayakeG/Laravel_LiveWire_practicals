@@ -33,4 +33,80 @@
     <p class="mb-4 text-green-600">Access $this->fluentApi computed property</p>
     <div class="break-after-all mb-4">{{ $this->fluentApi }}</div>
 
+    <p class="mb-4 text-green-600">API data paginate</p>
+    <div>
+        <table class="table-auto" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th class="border px-4 py-2">ID</th>
+                    <th class="border px-4 py-2">Environment</th>
+                    <th class="border px-4 py-2">Level</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach ($logs['data'] as $log)
+                    <tr>
+                        <td class="border px-4 py-2">{{ $log['id'] }}</td>
+                        <td class="border px-4 py-2">{{ $log['environment'] }}</td>
+                        <td class="border px-4 py-2">{{ $log['level'] }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+
+    @if ($logs['last_page'] > 1)
+        <div class="flex justify-center mt-4">
+            <nav class="block">
+                <ul class="flex pl-0 rounded list-none">
+                    @if ($logs['current_page'] > 1)
+                        <li class="relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-blue border-r-0 hover:cursor-pointer"
+                            wire:click.prevent="pagination({{ 1 }})">First</li>
+                        <li class="relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-blue border-r-0 hover:cursor-pointer"
+                            wire:click.prevent="pagination('{{ $logs['prev_page_url'] }}')">Previous</li>
+                    @endif
+
+                    @for ($i = 1; $i <= $logs['last_page']; $i++)
+                        <li class="relative block py-2 px-3 leading-tight border border-gray-300 
+                    @if ($logs['current_page'] == $i) bg-blue-600 text-white @else bg-white text-blue @endif
+                    border-r-0 hover:cursor-pointer"
+                            wire:click.prevent="pagination({{ $i }})">{{ $i }}</li>
+                    @endfor
+
+                    @if ($logs['current_page'] < $logs['last_page'])
+                        <li class="relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-blue border-r-0 hover:cursor-pointer"
+                            wire:click.prevent="pagination('{{ $logs['next_page_url'] }}')">Next</li>
+                        <li class="relative block py-2 px-3 leading-tight bg-white border border-gray-300 text-blue hover:cursor-pointer"
+                            wire:click.prevent="pagination('{{ $logs['last_page_url'] }}')">Last</li>
+                    @endif
+                </ul>
+            </nav>
+        </div>
+    @endif
+
+    <p class="mb-4 text-green-600">DB model data paginate</p>
+
+    <div>
+        <table class="table-auto" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th class="border px-4 py-2">ID</th>
+                    <th class="border px-4 py-2">Content</th>
+                    <th class="border px-4 py-2">Created Date</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach ($posts as $post)
+                    <tr>
+                        <td class="border px-4 py-2">{{ $post->id }}</td>
+                        <td class="border px-4 py-2">{{ $post->body }}</td>
+                        <td class="border px-4 py-2">{{ $post->created_at }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+
 </div>
