@@ -1,7 +1,7 @@
 <div x-data="{ show: false }" x-init="() => {
 
     window.addEventListener('showModal', (event) => {
-        console.log(event.detail.name, {{ $attributes['name'] }});
+        console.log(event.detail[0].name);
 
         if (@this.get('modalData').name) {
             show = true
