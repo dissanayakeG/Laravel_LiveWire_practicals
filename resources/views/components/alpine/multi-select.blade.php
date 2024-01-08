@@ -46,26 +46,3 @@
         </div>
     </div>
 </div>
-
-
-{{-- <script>
-    function getData() {
-        return {
-            open: false,
-            selectedOptions: @entangle('selectedOptions'),
-            allOptions: @entangle('allOptions'),
-            get selectedOptionNames() {
-                return this.allOptions.filter(option => this.selectedOptions.includes(option.id.toString()) ||
-                    this.selectedOptions.includes(option.id)).map(option => option.name).join(', ');
-            },
-        }
-    }
-
-    function initializeData() {
-        this.$watch('selectedOptions', value =>
-            this.selectedOptionNames = this.allOptions.filter(option => this.selectedOptions.includes(option.id
-                    .toString()) ||
-                this.selectedOptions.includes(option.id)).map(option => option.name).join(', ');
-        )
-    }
-</script> --}}
