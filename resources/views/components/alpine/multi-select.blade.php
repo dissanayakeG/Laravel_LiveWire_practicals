@@ -1,6 +1,6 @@
 @props(['selectedOptions', 'allOptions'])
 
-<div class="flex w-60 justify-center border">
+<div class="flex w-60 justify-center">
     <div id="wrapper"
         x-data="{
             open: false,

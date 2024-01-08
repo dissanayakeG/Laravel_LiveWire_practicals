@@ -21,10 +21,11 @@ class Alpine extends Component
 
     public function submit()
     {
-        dd($this->selectedOptionNames);
+        dd($this->all());
     }
 
-    public function increment(){
+    public function increment()
+    {
         dump('calling');
     }
 
