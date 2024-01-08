@@ -6,11 +6,13 @@
             open: false,
             selectedOptions: @entangle('selectedOptions'),
             allOptions: @entangle('allOptions'),
-            selectedOptionNames: ''
+            selectedOptionNames() {
+                return this.allOptions.filter(option => this.selectedOptions.includes(option.id.toString()) ||
+                    this.selectedOptions.includes(option.id)).map(option => option.name).join(', ');
+            },
         }"
-        x-init="selectedOptionNames = allOptions.filter(option => selectedOptions.includes(option.id.toString()) || selectedOptions.includes(option.id)).map(option => option.name).join(', ')
-        $watch('selectedOptions', value =>
-            selectedOptionNames = allOptions.filter(option => selectedOptions.includes(option.id.toString()) || selectedOptions.includes(option.id)).map(option => option.name).join(', ')
+        x-init="$watch('selectedOptions', () =>
+            selectedOptionNames()
         )">
 
 
@@ -44,3 +46,26 @@
         </div>
     </div>
 </div>
+
+
+{{-- <script>
+    function getData() {
+        return {
+            open: false,
+            selectedOptions: @entangle('selectedOptions'),
+            allOptions: @entangle('allOptions'),
+            get selectedOptionNames() {
+                return this.allOptions.filter(option => this.selectedOptions.includes(option.id.toString()) ||
+                    this.selectedOptions.includes(option.id)).map(option => option.name).join(', ');
+            },
+        }
+    }
+
+    function initializeData() {
+        this.$watch('selectedOptions', value =>
+            this.selectedOptionNames = this.allOptions.filter(option => this.selectedOptions.includes(option.id
+                    .toString()) ||
+                this.selectedOptions.includes(option.id)).map(option => option.name).join(', ');
+        )
+    }
+</script> --}}
