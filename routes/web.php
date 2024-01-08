@@ -51,6 +51,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/events', \App\Livewire\Events::class);
     Route::get('/form', \App\Livewire\FormSubmit::class);
     Route::get('/alpine', \App\Livewire\AlpineTest::class);
+    Route::get('/multi-select', \App\Livewire\MultiSelect::class);
 
     Route::post('/books', [BookController::class, 'store']);
     Route::patch('/books/{book}', [BookController::class, 'update']);
