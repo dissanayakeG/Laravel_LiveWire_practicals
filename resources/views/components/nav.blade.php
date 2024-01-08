@@ -47,11 +47,6 @@
                     <span class="text">{{ 'ALPINE' }}</span>
                 </a>
             </li>
-            <li class="item">
-                <a href="/multi-select" wire:navigate>
-                    <span class="text">{{ 'MILTI-SELECT' }}</span>
-                </a>
-            </li>
         @else
             <li class="item">
                 <a href="/register" wire:navigate>

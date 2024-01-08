@@ -4,7 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 
-class MultiSelect extends Component
+class Alpine extends Component
 {
     public $allOptions = [
         ["id" => 1, "name" => "some 1"],
@@ -19,21 +19,18 @@ class MultiSelect extends Component
         2, 6
     ];
 
-    public function getSelectedOptionNames()
-    {
-        return collect($this->selectedOptions)->map(function ($optionId) {
-            return collect($this->allOptions)->where('id', $optionId)->pluck('name')->first();
-        })->implode(', ');
-    }
-
     public function submit()
     {
         dd($this->selectedOptionNames);
     }
 
+    public function increment(){
+        dump('calling');
+    }
+
 
     public function render()
     {
-        return view('livewire.multi-select');
+        return view('livewire.alpine');
     }
 }
